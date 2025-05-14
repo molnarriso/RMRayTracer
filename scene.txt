@@ -1,0 +1,23 @@
+	# scene.txt
+
+# Global Settings: MAX_RAY_DEPTH;SAMPLES_PER_PIXEL;BACKGROUND_R;BACKGROUND_G;BACKGROUND_B
+10;2;0.1;0.12;0.18
+
+# Material Definitions
+# Format: M;material_id;BASE_R;BASE_G;BASE_B;REFLECTIVITY;ROUGHNESS;EMIT_R;EMIT_G;EMIT_B
+M;mat_red_glossy;1.0;0.0;0.0;0.8;0.02;0;0;0
+M;mat_green_rough;0.0;1.0;0.0;0.7;0.3;0;0;0
+M;mat_blue_mirror;0.0;0.0;1.0;0.3;0.05;0;0;0
+M;mat_grey_floor;0.502;0.202;0.502;0.6;0.15;0;0;0 # 0x80/255 = 0.50196
+M;mat_rough;0.9;0.9;0.9;0.7;0.4;0;0;0 # 0x22/255 = 0.133, 0x11/255 = 0.067
+M;mat_yellow_diffuse;1.0;1.0;0.0;0.0;0.2;0;0;0 # Lambertian: 0 reflectivity, max roughness
+
+# Sphere Definitions
+# Format: S;material_id_ref;POS_X;POS_Y;POS_Z;RADIUS
+S;mat_red_glossy;-0.4;0.5;-1.6;0.5
+S;mat_green_rough;-1.2;0.3;-0.8;0.3
+S;mat_blue_mirror;1.0;0.7;-1.2;0.7
+S;mat_grey_floor;0;-99.5.0;0;99.5 # Making radius slightly less than center.y for a flat top at y= -0.5
+S;mat_yellow_diffuse;0.0;2.0;-1.0;0.4
+S;mat_rough;-10;0;-14;15
+S;mat_rough;10;0;-14;15
